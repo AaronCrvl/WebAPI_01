@@ -6,8 +6,10 @@
 http://localhost.../api/Usuarios/
 
 ## Objeto Da Requisição:
-``` c#
-public long Id 
+``` c# 
+        USUARIO.cs
+        
+        public long Id 
         { 
             get { return Id; }
             set { Id = value } 
