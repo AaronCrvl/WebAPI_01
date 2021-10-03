@@ -5,6 +5,12 @@
 [Route("api/[Controller]")]
 http://localhost.../api/Usuarios/
 
+Para...
+retornar Usuário: Passar seu id na requisição.
+retornar todos os Usuários: Não enviar nada na requisição além do caminho padrão.
+adicionar Usuário: Passar os campos de Nome, Email e Senha no corpo da requsição.
+atualizar Usuário: Passar id na requisição e campos a serem atualizados no corpo.
+
 ## Objeto Da Requisição:
 ``` c# 
         USUARIO.cs
