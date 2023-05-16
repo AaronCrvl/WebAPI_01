@@ -1,15 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using System.Windows.Forms;
+﻿using System.Collections.Generic;
 using WebAPI_01.Models;
 using WebAPI_01.Repository;
+using System.Web.Http;
+using Microsoft.AspNetCore.Mvc.Controllers;
+using Microsoft.AspNetCore;
+using Microsoft.AspNetCore.Mvc.Controllers;
+using System.Xml.Linq;
+using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI_01.Controllers
 {
-    [Route("api/[Controller]")]
+    [System.Web.Http.Route("api/[Controller]")]
     public class UsuarioController : Controller
     {
         private readonly IUsuarioRepository UsuarioRepo;
@@ -19,13 +20,13 @@ namespace WebAPI_01.Controllers
             this.UsuarioRepo = _UsuarioRepo;
         }
 
-        [HttpGet]
+        [System.Web.Http.HttpGet]
         public IEnumerable<Usuario> RetornarTodos()
         {
             return UsuarioRepo.RetornarTodos();
         }
 
-        [HttpGet("{id}", Name = "GetUsuario")]
+        [System.Web.Http.HttpGet("{id}")]
         public IActionResult GetByID(long id)
         {
             var Usuario = UsuarioRepo.GetUsuario(id);
@@ -35,8 +36,8 @@ namespace WebAPI_01.Controllers
                 return new ObjectResult(Usuario);
         }
 
-        [HttpPost]
-        public IActionResult Create([FromBody] Usuario usuario)
+        [System.Web.Http.HttpPost]
+        public IActionResult Create([System.Web.Http.FromBody] Usuario usuario)
         {
             if (usuario == null)
                 return BadRequest();

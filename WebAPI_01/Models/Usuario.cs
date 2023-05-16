@@ -11,7 +11,7 @@ namespace WebAPI_01.Models
         public long Id 
         { 
             get { return Id; }
-            set { Id = value } 
+            set { Id = value; } 
         }
         public string Nome 
         {
